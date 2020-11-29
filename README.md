@@ -21,7 +21,11 @@ loaded at all times.
 Install with [Fisher] (recommended):
 
 ```fish
+# Fisher v3.x
 fisher add halostatue/fish-ssh-agent
+
+# Fisher v4.x: Dependencies must be specified explicitly.
+fisher install halostatue/fish-utils-core halostatue/fish-ssh-agent
 ```
 
 <details>
