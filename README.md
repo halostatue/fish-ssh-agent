@@ -14,6 +14,15 @@ unlike the zsh version does not permit the specification of identities to add
 to the agent; all identities with a `.pub` extension in `${HOME}/.ssh` will be
 loaded at all times.
 
+The final call to add SSH identities to ssh-agent can be modified by setting
+`$halostatue_fish_ssh_agent_flags`. If not specified, defaults to
+a platform-specific value:
+
+- on macOS, it uses `-q -A -K`, which means that non-error output is
+  suppressed; keys will be unlocked with passphrases from the keychain;
+  if passphrases are required, will be stored in the keychain.
+- on other platforms, it uses `-q`.
+
 [![Version]]
 
 ## Installation
@@ -25,7 +34,7 @@ Install with [Fisher] (recommended):
 fisher add halostatue/fish-ssh-agent
 
 # Fisher v4.x: Dependencies must be specified explicitly.
-fisher install halostatue/fish-utils-core halostatue/fish-ssh-agent
+fisher install halostatue/fish-ssh-agent
 ```
 
 <details>
@@ -35,6 +44,7 @@ fisher install halostatue/fish-utils-core halostatue/fish-ssh-agent
 
 Copy `conf.d/*.fish` to your fish configuration directory preserving the
 directory structure.
+
 </details>
 
 ### System Requirements
@@ -45,8 +55,9 @@ directory structure.
 
 [MIT](LICENCE.md)
 
-[fish shell]: https://fishshell.com "friendly interactive shell"
-[Version]: https://img.shields.io/github/tag/halostatue/fish-ssh.svg?label=Version
+[fish shell]: https://fishshell.com 'friendly interactive shell'
+[version]: https://img.shields.io/github/tag/halostatue/fish-ssh.svg?label=Version
+
 [![Version]]: https://github.com/halostatue/fish-ssh/releases
 [Fisher]: https://github.com/jorgebucaran/fisher
 [fish]: https://github.com/fish-shell/fish-shell
