@@ -1,5 +1,9 @@
 # fish-ssh-agent Changelog
 
+## 1.1.1 / 2021-06-03
+
+- Fixed a bug with the detection of macOS.
+
 ## 1.1.0 / 2021-04-02
 
 - Not all SSH keys include the filename when printed with `ssh-add -L`.

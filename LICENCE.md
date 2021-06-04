@@ -1,4 +1,4 @@
-# MIT License
+# MIT Licence
 
 Copyright (c) 2020–2021 Austin Ziegler
 

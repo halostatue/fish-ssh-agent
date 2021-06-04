@@ -54,7 +54,7 @@ end
 
 set __saplugin__is_mac false
 
-if string match -q -e $type (string lower (uname -s))
+if string match -q -e darwin (string lower (uname -s))
     set __saplugin__is_mac true
 end
 
@@ -71,7 +71,7 @@ end
 test -L $SSH_AUTH_SOCK
 and ln -sf $SSH_AUTH_SOCK /tmp/ssh-agent-{$USER}-screen
 
-if set -q $halostatue_fish_ssh_agent_flags
+if set -q halostatue_fish_ssh_agent_flags
     set __saplugin__flags $halostatue_fish_ssh_agent_flags
 else
     if $__saplugin__is_mac
